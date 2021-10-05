@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import {BrowserRouter,Route,Switch} from 'react-router-dom'
+import Home from './components/Home/Home';
+import NavBar from './components/layout/NavBar';
+import {Box} from '@chakra-ui/react'
+import FavNotes from './components/notes/FavNotes';
+import NoteDetails from './components/notes/NoteDetails';
+import EditForm from './components/notes/EditForm';
+
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <Box bgColor='gray.100' style={{minHeight:'100vh'}}>
+    <BrowserRouter>
+    <NavBar/>
+    <Switch>
+      <Route path='/edit/:id' component={EditForm}/>
+      <Route path='/notes/:id' component={NoteDetails}/>
+      <Route path='/favorites' component={FavNotes}/>
+      <Route path='/' component={Home}/>
+    </Switch>
+    </BrowserRouter>
+  </Box>
   );
 }
 

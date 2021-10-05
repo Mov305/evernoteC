@@ -1,0 +1,21 @@
+[debug] [2021-10-05T17:55:15.135Z] ----------------------------------------------------------------------
+[debug] [2021-10-05T17:55:15.139Z] Command:       C:\Program Files (x86)\nodejs\node.exe C:\Users\Mov\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2021-10-05T17:55:15.140Z] CLI Version:   9.19.0
+[debug] [2021-10-05T17:55:15.140Z] Platform:      win32
+[debug] [2021-10-05T17:55:15.140Z] Node Version:  v14.17.0
+[debug] [2021-10-05T17:55:15.143Z] Time:          Tue Oct 05 2021 19:55:15 GMT+0200 (Eastern European Standard Time)
+[debug] [2021-10-05T17:55:15.143Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-10-05T17:55:15.164Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-10-05T17:55:15.164Z] > authorizing via signed-in user (mov3three2001@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\Mov\Desktop\P\app2
+
