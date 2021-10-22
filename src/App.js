@@ -6,20 +6,53 @@ import {Box} from '@chakra-ui/react'
 import FavNotes from './components/notes/FavNotes';
 import NoteDetails from './components/notes/NoteDetails';
 import EditForm from './components/notes/EditForm';
+import SignIn from './components/sign/SignIn';
+import { getAuth, onAuthStateChanged } from '@firebase/auth';
+import Cover from './components/Home/Cover';
+import Footer from './components/layout/Footer';
 
 
 function App() {
+  const [user,setUser] = React.useState(null)
+  React.useEffect(()=>{
+    const unsubscribe = onAuthStateChanged(getAuth(),
+      userAuth=>{
+        if(userAuth?.emailVerified){
+          const u={
+            email:userAuth.email,
+            UID:userAuth.uid
+          }
+          console.log('userA',userAuth)
+          setUser(u)
+        }else{console.log('not a user',userAuth?.emailVerified);setUser(null)}
+      }
+    )
+    return unsubscribe
+  },[])
 
   return (
-  <Box bgColor='gray.100' style={{minHeight:'100vh'}}>
+  <Box  style={{minHeight:'100vh'}} >
     <BrowserRouter>
     <NavBar/>
     <Switch>
-      <Route path='/edit/:id' component={EditForm}/>
-      <Route path='/notes/:id' component={NoteDetails}/>
-      <Route path='/favorites' component={FavNotes}/>
-      <Route path='/' component={Home}/>
+      {user?
+      (<Switch>
+        <Route exact path='/edit/:id' component={EditForm}/>
+        <Route exact path='/notes/:id' component={NoteDetails}/>
+        <Route exact path='/favorites' component={FavNotes}/>
+        <Route exact  path='/signin' component={SignIn}/>
+        <Route path='/home' component={Home}/>
+      </Switch>
+      ):
+      <Switch>
+        <Cover/>
+        
+        <SignIn/>
+      </Switch>
+      }
+      
     </Switch>
+    <Footer/>
     </BrowserRouter>
   </Box>
   );
