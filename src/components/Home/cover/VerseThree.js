@@ -44,8 +44,13 @@ function VerseThree() {
         return op
     }
 
-    window.addEventListener('resize',()=>setTimeout(setSize(window.innerWidth),100))
-
+    React.useEffect(()=>{
+        const event=()=>setSize(window.innerWidth)
+        window.addEventListener('resize',event)
+        return ()=>{
+            window.removeEventListener('resize',event)
+        }
+    },[size])
 
     React.useEffect(()=>{
         const interval = setInterval(()=>{nextSlide()},10000);

@@ -6,6 +6,7 @@ import finger from '../../../assets/icons8-fingerprint-scan-80.png'
 import calendar from '../../../assets/icons8-calendar-100.png'
 
 
+const style = {color:'green',display:'inline-block',cursor:'pointer', transform: 'translateY(5.1px)'}
 function VerseFour() {
     return (
         <Box p={['20px','120px']} fontSize={['1.2em','1.5em']}>
@@ -14,7 +15,7 @@ function VerseFour() {
                 <Heading py='10px'>Hit every deadline</Heading>
                 <Text>
                 Create and assign tasks inside your notes with due dates, flags, and reminders so nothing falls through the cracks.                </Text>
-                <Text color='green'>Learn More <AiOutlineArrowRight style={{color:'green',display:'inline-block',cursor:'pointer'}}/> </Text>
+                <Text color='green'>Learn More <AiOutlineArrowRight style={style}/> </Text>
             </Box>
             <Img src={todo} dispaly='block'  p='20px' width='150px' height='150px' />
             </Flex>
@@ -25,7 +26,7 @@ function VerseFour() {
                 <Heading py='10px'>Go paperless</Heading>
                 <Text>
                 Scan important documents and keep them handy on all your devices. Save the information—not the clutter.                </Text>
-                <Text color='green'>Learn More <AiOutlineArrowRight style={{color:'green',display:'inline-block',cursor:'pointer'}} /> </Text>
+                <Text color='green'>Learn More <AiOutlineArrowRight style={style} /> </Text>
             </Box>
             </Flex>
 
@@ -36,7 +37,7 @@ function VerseFour() {
                 <Text>
                   Make your schedule work for you. Your meetings and notes have context so nothing gets lost in the shuffle.
                 </Text>
-                <Text color='green'>Learn More <AiOutlineArrowRight style={{color:'green',display:'inline-block',cursor:'pointer'}}/> </Text>
+                <Text color='green'>Learn More <AiOutlineArrowRight style={style}/> </Text>
             </Box>
             <Img src={calendar} dispaly='block' p='20px' width='150px' height='150px' />
             </Flex>

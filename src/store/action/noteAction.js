@@ -56,3 +56,16 @@ export const editNote=(note)=>{
         .catch(err=>console.log('error',err))
      }
 }
+export const addUserData=({firstName,lastName,country,address,phoneNumber})=>{
+    const data={
+        firstName,
+        lastName,
+        country,
+        address,
+        phoneNumber
+    }
+    return{
+        type:'ADD_DATA',
+        payload:data
+    }
+}

@@ -11,7 +11,6 @@ function Cover() {
           <VerseTwo/>
           <VerseThree/>
           <VerseFour/>
-         
         </Box>
     )
 }

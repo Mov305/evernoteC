@@ -26,7 +26,11 @@ const NavBar = () => {
 
   React.useEffect(
     ()=>{
-      window.addEventListener('scroll',()=>{setShad(window.scrollY)})
+      setTimeout(
+        window.addEventListener('scroll',()=>{setShad(window.scrollY)}),100
+
+      )
+      
 
 
       return ()=>{

@@ -3,7 +3,7 @@ import {Box,Heading,Input,Textarea,Button} from '@chakra-ui/react'
 import { useDispatch, useSelector } from 'react-redux'
 import { editNote } from '../../store/action/noteAction'
 import useInput from '../../customhook/useInput'
-import { useHistory } from 'react-router'
+import { useNavigate } from 'react-router'
 
 const EditForm = () => {
  
@@ -11,7 +11,7 @@ const EditForm = () => {
     const dispatch = useDispatch()
     const [title, bindTitle] = useInput(note.title)
     const [content, bindContent] = useInput(note.content)
-    const history = useHistory()
+    const history = useNavigate()
 
     const handleSubmit = (e) => {
         e.preventDefault();
