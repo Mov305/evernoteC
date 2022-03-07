@@ -1,7 +1,6 @@
 import React from 'react'
 import { Flex, Heading, Button, Box, Spacer} from '@chakra-ui/react'
 import { NavLink } from 'react-router-dom'
-import { getAuth, signOut } from '@firebase/auth'
 import { SiLionair } from 'react-icons/si'
 import {AiFillCaretDown} from 'react-icons/ai'
 import Features from './Features'
@@ -24,25 +23,21 @@ const NavBar = () => {
     return shadstyle
   }
 
+
   React.useEffect(
     ()=>{
-      setTimeout(
-        window.addEventListener('scroll',()=>{setShad(window.scrollY)}),100
-
-      )
-      
-
-
+      const shadHandle =()=>setShad(window.scrollY)
+      window.addEventListener('scroll',shadHandle())
       return ()=>{
-          window.removeEventListener('scroll',()=>{setShad(window.scrollY)})
+          window.removeEventListener('scroll',shadHandle())
 
       }
-              // eslint-disable-next-line react-hooks/exhaustive-deps
+              // eslint-disable-next-line 
     },[shad])
     
   const style = { color: '#7166C1', borderBottom: '4px solid #7166C1' }
   return (
-  <Box width='100%' mb='100'>
+  <Box width='100%' mb='100' >
    
    <Box bgColor='white' color='black' pos='fixed' top='0' width='100%' zIndex='2' >
       <Flex pos='relative' {...handleShad()} transition='all ease-in-out 0.5s' >
@@ -90,7 +85,7 @@ const NavBar = () => {
           <Box m='3' _hover={{ color: '#7166C1',cursor:'pointer' }}>Help</Box>
           <Box
             bg="transparent" _hover={{ color: '#7166C1',cursor:'pointer' }}
-            onClick={() => signOut(getAuth())} m='3'>Logout</Box>
+            m='3'>About</Box>
           <Button
             color='#7166C1' fontWeight='bold'
             style={{ border: '3px solid #7166C1' }}

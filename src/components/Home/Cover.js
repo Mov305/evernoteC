@@ -4,6 +4,7 @@ import VerseOne from './cover/VerseOne'
 import VerseTwo from './cover/VerseTwo'
 import VerseThree from './cover/VerseThree'
 import VerseFour from './cover/VerseFour'
+import Footer2 from './cover/VerseFive'
 function Cover() {
     return (
         <Box>
@@ -11,6 +12,7 @@ function Cover() {
           <VerseTwo/>
           <VerseThree/>
           <VerseFour/>
+          <Footer2/>
         </Box>
     )
 }

@@ -19,7 +19,7 @@ const Form = () => {
         
     }
     return (
-        <Box align='center' shadow='xl' p='4' bgColor='white'>
+        <Box align='center' shadow='xl' p='4' bgColor='white' width='70%'>
             <form action="" onSubmit={(e)=>handleSubmit(e)}>
                 <Heading fontSize='md'>New Note</Heading>
                 <Input

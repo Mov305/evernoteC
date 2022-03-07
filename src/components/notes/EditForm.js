@@ -17,7 +17,7 @@ const EditForm = () => {
         e.preventDefault();
         if (title && content) {
             dispatch(editNote({id: note.id, title, content }))
-            history.push('/')
+            history('/home')
         }
 
     }

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box, Flex, InputGroup, Input, InputRightElement, Button, Heading, Text, Tag } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
-import { getAuth, createUserWithEmailAndPassword,signInWithEmailAndPassword,sendEmailVerification } from "firebase/auth";
+import { getAuth,signInWithEmailAndPassword} from "firebase/auth";
 
 
 

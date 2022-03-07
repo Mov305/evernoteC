@@ -13,6 +13,7 @@ import {Provider} from 'react-redux'
 import firebase from 'firebase/compat/app'
 import thunk from 'redux-thunk'
 import {logger} from 'redux-logger'
+import { BrowserRouter } from 'react-router-dom';
 
 
 const store = createStore(rootReducer,
@@ -33,14 +34,13 @@ const rrfProps ={
 ReactDOM.render(
   <React.StrictMode>
     <ChakraProvider>
-
+      <BrowserRouter>
       <Provider store={store}>
         <ReactReduxFirebaseProvider {...rrfProps}>
         <App />
-
         </ReactReduxFirebaseProvider>
-
       </Provider>
+      </BrowserRouter>
     </ChakraProvider>
   </React.StrictMode>,
   document.getElementById('root')

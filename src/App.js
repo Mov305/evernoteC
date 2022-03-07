@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import {  Route, Routes } from 'react-router-dom'
 import Home from './components/Home/Home';
 import NavBar from './components/layout/NavBar';
 import { Box, Flex } from '@chakra-ui/react'
@@ -12,10 +12,15 @@ import { getAuth, onAuthStateChanged } from '@firebase/auth';
 import Cover from './components/Home/Cover';
 import Footer from './components/layout/Footer';
 import SideBar from './components/layout/SideBar';
+import { useNavigate } from 'react-router-dom';
+import Draft from './components/Home/Draft';
 
 
 function App() {
   const [user, setUser] = React.useState(null)
+  const navigate = useNavigate()
+
+
   React.useEffect(() => {
     const unsubscribe = onAuthStateChanged(getAuth(),
       userAuth => {
@@ -25,28 +30,29 @@ function App() {
             UID: userAuth.uid
           }
           console.log('userA', userAuth)
+          navigate('/home')
           setUser(u)
-        } else { console.log('not a user', userAuth?.emailVerified); setUser(null) }
+        } else { console.log('not a user', userAuth?.emailVerified); setUser(null);navigate('/')}
       }
     )
     return unsubscribe
+      // eslint-disable-next-line 
   }, [])
 
   return (
     <Box style={{ minHeight: '100vh' }} >
-      <BrowserRouter>
 
         {user ?
-          (<Flex>
-            <Box>
+          (<Flex w='full'>
+            <Box h='100vh'   p='5px'>
               <SideBar/>
             </Box>
-             <Box>
+             <Box p='10px' pt='70px' flexGrow={2}>
              <Routes>
             <Route exact path='/edit/:id' element={<EditForm />} />
             <Route exact path='/notes/:id' element={<NoteDetails />} />
             <Route exact path='/favorites' element={<FavNotes />} />
-            <Route exact path='/signin' element={<SignIn />} />
+            <Route exact path='/add' element ={<Draft/>} />
             <Route path='/home' element={<Home />} />
           </Routes>
              </Box>
@@ -63,7 +69,6 @@ function App() {
         }
 
         <Footer />
-      </BrowserRouter>
     </Box>
   );
 }
