@@ -47,7 +47,7 @@ function App() {
             <Box h='100vh'   p='5px'>
               <SideBar/>
             </Box>
-             <Box p='10px' ml={['80px']} pt='70px' flexGrow={2}>
+             <Box p='10px' ml={['40px','50px','80px']} pt='70px' flexGrow={2}>
              <Routes>
             <Route exact path='/edit/:id' element={<EditForm />} />
             <Route exact path='/notes/:id' element={<NoteDetails />} />
