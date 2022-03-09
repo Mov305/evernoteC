@@ -31,7 +31,7 @@ const handleNavigate = (direction)=>{
   }
 
   return (
-    <Box h='100%' w={['30px','50px','80px']} bg='#7166C1' rounded='lg' pos='relative' >
+    <Box h='90%' w={['30px','50px','80px']} bg='#7166C1' rounded='lg' pos='Fixed' zIndex='2' >
       
       <Flex m='2' pos='absolute' left={['80px']} >
         <Box fontSize={['1.7em', '2em', '2.8em']} >

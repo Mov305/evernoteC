@@ -25,7 +25,7 @@ const Note = ({note}) => {
           dispatch(toggleFav(note))
       }
         return (
-            <Box p={5} shadow='xl' my={3} bgColor='white'>
+            <Box p={5} shadow='xl' my={3} bgColor='white' rounded='2xl'>
                 <Flex>
                     <Link to={`/notes/${note.id}`}>
                     <Heading size='md'> {note.title} </Heading>
